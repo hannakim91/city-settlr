@@ -1,4 +1,4 @@
-import logo from './location.png';
+import logo from '../location.png';
 import './App.css';
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Settlr</h1>
       </header>
+      
     </section>
   );
 }
