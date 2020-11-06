@@ -1,5 +1,6 @@
 import logo from '../location.png';
 import './App.css';
+import Cities from '../Cities/Cities.js';
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Settlr</h1>
       </header>
-      
+      <Cities />
     </section>
   );
 }
