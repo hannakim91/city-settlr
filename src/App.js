@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './location.png';
 import './App.css';
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
     <section className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>settlr</h1>
+        <h1>Settlr</h1>
       </header>
     </section>
   );
