@@ -7,9 +7,9 @@ export const getAllCities = async () => {
 
 //api setup:
 //list of all cities: _links.curies[i].name (all city names available)
-https://api.teleport.org/api/urban_areas/
+//https://api.teleport.org/api/urban_areas/
 //individual city score: _links.categories[i].name || score_out_of_10
-`https://api.teleport.org/api/urban_areas/slug:${cityName}/scores/`
+//`https://api.teleport.org/api/urban_areas/slug:${cityName}/scores/`
 // individual city images: _links.photos[0].attribution.source
-`https://api.teleport.org/api/urban_areas/slug:${cityName}/images/`
+//`https://api.teleport.org/api/urban_areas/slug:${cityName}/images/`
 
