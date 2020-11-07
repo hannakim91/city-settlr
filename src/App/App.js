@@ -6,6 +6,16 @@ import { useState, useEffect } from 'react';
 
 const App = () => {
   const [cities, setCities] = useState({ cities: [] })
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await getAllCities()
+      const cityList = result._links['ua:item'].map(city => city.name)
+      setCities(cityList)
+    }
+    fetchData()
+  }, [])
+
   return (
     <section className="App">
       <header className="App-header">
