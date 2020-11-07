@@ -11,20 +11,24 @@ const Cities = (props) => {
     }
   }, [props.cities])
 
+  const addToCompareList = (cityName) => {
+    console.log('click')
+    setCompareList([...compareList, cityName])
+  }
+
   const cityCards = cities.map((city, i) => {
     return <CityCard 
       name={city}
       key={i + 1}
+      addToCompareList={addToCompareList}
     />
   })
 
-  const addToCompareList = (cityName) => {
-    setCompareList([...compareList, cityName])
-  }
 
   return (
     <>
       <h2>Cities</h2>
+      <button>Compare!</button>
       <section>{cityCards}</section>
     </>
   )
