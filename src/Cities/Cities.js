@@ -13,7 +13,7 @@ const Cities = (props) => {
   const cityCards = cities.map((city, i) => {
     return <CityCard 
       name={city}
-      key={i}
+      key={i + 1}
     />
   })
 
