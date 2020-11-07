@@ -6,12 +6,21 @@ import './App.css';
 
 const App = () => {
   const [cities, setCities] = useState({ cities: [] })
+  const [isLoading, setIsLoading] = useState(false)
+  const [isError, setIsError] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getAllCities()
-      const cityNames = result._links['ua:item'].map(city => city.name)
-      setCities(cityNames)
+      setIsLoading(true)
+      try {
+        const result = await getAllCities()
+        const cityNames = result._links['ua:item'].map(city => city.name)
+        setCities(cityNames)
+      }
+      catch (error) {
+        setIsError(true)
+      }
+      setIsLoading(false)
     }
     fetchData()
   }, [])
