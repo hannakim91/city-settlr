@@ -1,8 +1,8 @@
+import React, { useState, useEffect } from 'react';
+import { getAllCities } from '../apiCalls.js';
+import Cities from '../Cities/Cities.js';
 import logo from '../location.png';
 import './App.css';
-import Cities from '../Cities/Cities.js';
-import { getAllCities } from '../apiCalls.js';
-import { useState, useEffect } from 'react';
 
 const App = () => {
   const [cities, setCities] = useState({ cities: [] })
@@ -10,8 +10,8 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await getAllCities()
-      const cityList = result._links['ua:item'].map(city => city.name)
-      setCities(cityList)
+      const cityNames = result._links['ua:item'].map(city => city.name)
+      setCities(cityNames)
     }
     fetchData()
   }, [])
@@ -22,7 +22,7 @@ const App = () => {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Settlr</h1>
       </header>
-      <Cities />
+      <Cities cities={cities}/>
     </section>
   );
 }
