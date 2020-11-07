@@ -1,3 +1,6 @@
+import compareBW from '../assets/scale-bw.png'
+import scaleColor from '../assets/scale-color.png'
+
 const CityCard = ({name}) => {
   return (
     <>
@@ -7,3 +10,6 @@ const CityCard = ({name}) => {
 }
 
 export default CityCard
+
+//imgs for compare off / compare on
+//

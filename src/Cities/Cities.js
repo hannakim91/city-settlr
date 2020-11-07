@@ -3,6 +3,7 @@ import CityCard from '../CityCard/CityCard'
 
 const Cities = (props) => {
   const [cities, setCities] = useState([])
+  const [compareList, setCompareList] = useState([])
 
   useEffect(() => {
     if (props.cities.length) {
@@ -16,6 +17,10 @@ const Cities = (props) => {
       key={i + 1}
     />
   })
+
+  const addToCompareList = (cityName) => {
+    setCompareList([...compareList, cityName])
+  }
 
   return (
     <>
