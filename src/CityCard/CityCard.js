@@ -1,6 +1,8 @@
-const CityCard = () => {
+const CityCard = ({name}) => {
   return (
-    <>CARD</>
+    <>
+      <h3>{name}</h3>
+    </>
   )
 }
 

@@ -10,9 +10,10 @@ const Cities = (props) => {
     }
   }, [props.cities])
 
-  const cityCards = cities.map(city => {
+  const cityCards = cities.map((city, i) => {
     return <CityCard 
       name={city}
+      key={i}
     />
   })
 
