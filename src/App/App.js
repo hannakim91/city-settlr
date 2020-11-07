@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getAllCities } from '../apiCalls.js';
 import Cities from '../Cities/Cities.js';
-import logo from '../location.png';
+import logo from '../assets/location.png';
 import './App.css';
 
 const App = () => {
