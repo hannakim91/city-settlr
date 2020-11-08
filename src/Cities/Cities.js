@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CityCard from '../CityCard/CityCard'
+import { Link } from 'react-router-dom'
 
 const Cities = (props) => {
   const [cities, setCities] = useState([])
@@ -27,7 +28,11 @@ const Cities = (props) => {
   return (
     <>
       <h2>Cities</h2>
-      <button>Compare!</button>
+      <Link to="/compare">
+        <button type="button">
+          Compare!
+        </button>
+      </Link>
       <section>{cityCards}</section>
     </>
   )
