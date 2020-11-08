@@ -9,7 +9,7 @@ const CityCard = ({name, addToCompareList}) => {
     <>
       <img 
         src={defaultScale}
-        onClick={() => addToCompareList(name.toLowerCase())}
+        onClick={() => addToCompareList(name)}
       />
       <h3>{name}</h3>
     </>

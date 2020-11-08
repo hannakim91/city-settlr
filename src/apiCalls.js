@@ -4,7 +4,7 @@ export const getAllCities = async () => {
 }
 
 export const getComparisonData = async (cities) => {
-  return Promise.all(cities.map(city => fetch(`https://api.teleport.org/api/urban_areas/slug:${city}/scores/`).then(response => response.json())))
+  return Promise.all(cities.map(city => fetch(`https://api.teleport.org/api/urban_areas/slug:${city.toLowerCase().split(' ').join('-')}/scores/`).then(response => response.json())))
     // .then(values => console.log(values))
 }
 //can you loop through fetching map through fetches?
