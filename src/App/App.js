@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom'
 import { getAllCities } from '../apiCalls.js';
 import Cities from '../Cities/Cities.js';
+import ComparePage from '../ComparePage/ComparePage.js';
 import logo from '../assets/location.png';
 import './App.css';
 
@@ -34,7 +35,9 @@ const App = () => {
         <h1>Settlr</h1>
       </header>
       <Cities cities={cities}/>
-      <Route exact path='/compare' />
+      <Route exact path='/compare'>
+        <ComparePage />
+      </Route>
     </section>
   );
 }
