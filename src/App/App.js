@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import { getAllCities } from '../apiCalls.js';
 import Cities from '../Cities/Cities.js';
 import ComparePage from '../ComparePage/ComparePage.js';
@@ -29,16 +29,27 @@ const App = () => {
   }, [])
 
   return (
-    <section className="App">
+    <>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Settlr</h1>
       </header>
-      <Cities cities={cities}/>
-      <Route exact path='/compare'>
-        <ComparePage />
-      </Route>
-    </section>
+ 
+      <Switch>
+        <Route 
+          exact path='/'
+          render={() => (
+            <section className="App">
+              <Cities cities={cities}/>
+            </section>
+          )}
+        />
+        <Route 
+            exact path='/compare' 
+            render={() => ComparePage}
+        />
+      </Switch>
+    </>
   );
 }
 
