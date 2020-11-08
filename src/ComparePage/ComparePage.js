@@ -1,7 +1,7 @@
-const ComparePage = () => {
+const ComparePage = ({compareList}) => {
   return (
     <>
-      Compare
+      <h2>Compare</h2>
     </>
   )
 }

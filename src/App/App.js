@@ -39,8 +39,8 @@ const App = () => {
       <header className="App-header">
         <Link to="/">
           <img src={logo} className="App-logo" alt="logo" />
+        </Link> 
           <h1>Settlr</h1>
-        </Link>
       </header>
  
       <Switch>
@@ -57,7 +57,11 @@ const App = () => {
         />
         <Route 
             exact path='/compare' 
-            render={() => ComparePage}
+            render={() => (
+              <ComparePage
+                compareList={compareList}
+              />
+            )}
         />
       </Switch>
     </>
