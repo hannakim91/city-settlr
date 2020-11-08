@@ -10,6 +10,7 @@ const App = () => {
   const [cities, setCities] = useState({ cities: [] })
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
+  const [compareList, setCompareList] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +29,11 @@ const App = () => {
     fetchData()
   }, [])
 
+  const addToCompareList = (cityName) => {
+    console.log('click')
+    setCompareList([...compareList, cityName])
+  }
+
   return (
     <>
       <header className="App-header">
@@ -40,7 +46,10 @@ const App = () => {
           exact path='/'
           render={() => (
             <section className="App">
-              <Cities cities={cities}/>
+              <Cities
+                cities={cities}
+                addToCompareList={addToCompareList}
+              />
             </section>
           )}
         />

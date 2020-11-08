@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 const Cities = (props) => {
   const [cities, setCities] = useState([])
-  const [compareList, setCompareList] = useState([])
 
   useEffect(() => {
     if (props.cities.length) {
@@ -12,16 +11,11 @@ const Cities = (props) => {
     }
   }, [props.cities])
 
-  const addToCompareList = (cityName) => {
-    console.log('click')
-    setCompareList([...compareList, cityName])
-  }
-
   const cityCards = cities.map((city, i) => {
     return <CityCard 
       name={city}
       key={i + 1}
-      addToCompareList={addToCompareList}
+      addToCompareList={props.addToCompareList}
     />
   })
 
