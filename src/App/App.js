@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Route } from 'react-router-dom'
 import { getAllCities } from '../apiCalls.js';
 import Cities from '../Cities/Cities.js';
 import logo from '../assets/location.png';
@@ -33,6 +34,7 @@ const App = () => {
         <h1>Settlr</h1>
       </header>
       <Cities cities={cities}/>
+      <Route exact path='/compare' />
     </section>
   );
 }
