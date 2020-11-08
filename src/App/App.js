@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Link, Switch, Route } from 'react-router-dom'
 import { getAllCities } from '../apiCalls.js';
 import Cities from '../Cities/Cities.js';
 import ComparePage from '../ComparePage/ComparePage.js';
@@ -37,8 +37,10 @@ const App = () => {
   return (
     <>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Settlr</h1>
+        <Link to="/">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1>Settlr</h1>
+        </Link>
       </header>
  
       <Switch>
