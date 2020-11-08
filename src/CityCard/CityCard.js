@@ -1,11 +1,14 @@
-import compareBW from '../assets/scale-bw.png'
-import scaleColor from '../assets/scale-color.png'
+import defaultScale from '../assets/scale-bw.png'
+import colorScale from '../assets/scale-color.png'
 
 const CityCard = ({name, addToCompareList}) => {
+
+  // const toggleCompare = compareList.includes(name) 
+  // ? defaultScale : colorScale
   return (
     <>
       <img 
-        src={compareBW}
+        src={defaultScale}
         onClick={() => addToCompareList(name)}
       />
       <h3>{name}</h3>
