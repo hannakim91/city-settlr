@@ -26,10 +26,13 @@ describe('App', () => {
     </MemoryRouter>
     );
     const header = screen.getByText("Settlr");
+    const logo = screen.getByAltText("logo");
     expect(header).toBeInTheDocument();
+    expect(logo).toBeInTheDocument();
     await waitFor(() => expect(screen.getByText("Atlanta")).toBeInTheDocument())
     expect(screen.getByText("Bali")).toBeInTheDocument()
     expect(screen.getByText("Caracas")).toBeInTheDocument()
+    screen.debug()
 
   });
 
