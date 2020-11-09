@@ -22,7 +22,7 @@ describe('App', () => {
     getComparisonData.mockResolvedValue(
       [
         {
-          "categories": [
+          categories: [
             {
               "color": "#f3c32c",
               "name": "Housing",
@@ -111,7 +111,7 @@ describe('App', () => {
           ]
         },
         {
-          "categories": [
+          categories: [
             {
               "color": "#f3c32c",
               "name": "Housing",
@@ -229,7 +229,6 @@ describe('App', () => {
     const addToCompareListIcon = screen.getByAltText("add Atlanta to compare list")
     expect(addToCompareListIcon.src).toEqual('http://localhost/scale-bw.png')
     userEvent.click(addToCompareListIcon)
-    screen.debug()
     expect(addToCompareListIcon.src).toEqual('http://localhost/scale-color.png')
   })
 
@@ -246,8 +245,14 @@ describe('App', () => {
  
     userEvent.click(addAtlantaIcon)
     userEvent.click(addBaliIcon)
-    screen.debug()
     userEvent.click(compareButton)
+    await waitFor(() => expect(screen.getByText("Compare Cities")).toBeInTheDocument())
+    screen.debug()
+
+    const atlantaStats = {
+      name: "Atlanta",
+      travel: "Travel Connectivity: 1.7765000000000004"
+    }
 
   })
 
