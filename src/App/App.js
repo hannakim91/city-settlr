@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Switch, Route } from 'react-router-dom'
+import { Link, Switch, Route } from 'react-router-dom';
 import { getAllCities } from '../apiCalls.js';
 import Cities from '../Cities/Cities.js';
 import ComparePage from '../ComparePage/ComparePage.js';
+import DetailsPage from '../DetailsPage/DetailsPage.js';
 import logo from '../assets/location.png';
 import './App.css';
 
@@ -17,8 +18,9 @@ const App = () => {
     const fetchData = async () => {
       setIsLoading(true)
       try {
-        const result = await getAllCities()
-        const cityNames = result._links['ua:item'].map(city => city.name)
+        // const result = await getAllCities()
+        // const cityNames = result._links['ua:item'].map(city => city.name)
+        const cityNames = ["Aarhus", "Adelaide", "Albuquerque", "Almaty", "Amsterdam", "Anchorage", "Andorra", "Ankara", "Asheville", "Asuncion", "Athens", "Atlanta", "Auckland", "Austin", "Baku", "Bali", "Baltimore", "Bangkok", "Barcelona", "Beijing", "Beirut", "Belfast", "Belgrade", "Belize City", "Bengaluru", "Bergen", "Berlin", "Bern", "Bilbao", "Birmingham", "Birmingham, AL"]
         setCities(cityNames)
       }
       catch (error) {
@@ -80,9 +82,12 @@ const App = () => {
         />
         <Route 
           path="/city/:name"
-          // render={({match})} => {
-          //   const cityToRender = cities.find(city => )
-          // }
+          render={() => 
+            // console.log(match)
+            // console.log(cities)
+            // const cityToRender = cities.find(city => match.params.name)
+            <DetailsPage />
+          }
         />
       </Switch>
     </>
@@ -90,14 +95,3 @@ const App = () => {
 }
 
 export default App;
-
-
-      // if (compareList.length >= 3) {
-      //   setIsError(true)
-      //   setErrorMessage('You can compare up to 3 cities at a time')
-      // } else if (compareList.length <= 3 && compareList.includes(cityName)) {
-      //   const i = compareList.indexOf(cityName)
-      //   compareList.splice(i, 1)
-      // } else if (compareList.length < 3 && !compareList.includes(cityName)) {
-      //   setCompareList([...compareList, cityName])
-      // }

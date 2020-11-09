@@ -17,7 +17,9 @@ const CityCard = ({id, name, toggleCompareList, selected}) => {
       />
       <Link
         to={`city/${name}`}
-      >{name}</Link>
+      >
+        {name}
+      </Link>
     </section>
   )
 }
