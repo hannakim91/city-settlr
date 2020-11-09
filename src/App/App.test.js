@@ -2,7 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import "@testing-library/jest-dom";
 import { MemoryRouter } from 'react-router-dom';
-import { getAllCities, getComparisonData } from '../apiCalls.js'
+import { getAllCities, getComparisonData, getSingleCity } from '../apiCalls.js'
 import '@testing-library/jest-dom/extend-expect';
 import App from './App';
 jest.mock('../apiCalls.js');
@@ -202,7 +202,99 @@ describe('App', () => {
         }
       ]
     )
-
+    
+    getSingleCity.mockResolvedValue({
+      _links: {
+        summary: '#BLM',
+        categories: [
+          {
+            "color": "#f3c32c",
+            "name": "Housing",
+            "score_out_of_10": 4.9755
+          },
+          {
+            "color": "#f3d630",
+            "name": "Cost of Living",
+            "score_out_of_10": 5.241
+          },
+          {
+            "color": "#f4eb33",
+            "name": "Startups",
+            "score_out_of_10": 8.835
+          },
+          {
+            "color": "#d2ed31",
+            "name": "Venture Capital",
+            "score_out_of_10": 7.2570000000000014
+          },
+          {
+            "color": "#7adc29",
+            "name": "Travel Connectivity",
+            "score_out_of_10": 5.2915
+          },
+          {
+            "color": "#36cc24",
+            "name": "Commute",
+            "score_out_of_10": 3.8977500000000003
+          },
+          {
+            "color": "#19ad51",
+            "name": "Business Freedom",
+            "score_out_of_10": 8.671
+          },
+          {
+            "color": "#0d6999",
+            "name": "Safety",
+            "score_out_of_10": 2.6725
+          },
+          {
+            "color": "#051fa5",
+            "name": "Healthcare",
+            "score_out_of_10": 8.533999999999999
+          },
+          {
+            "color": "#150e78",
+            "name": "Education",
+            "score_out_of_10": 6.456999999999999
+          },
+          {
+            "color": "#3d14a4",
+            "name": "Environmental Quality",
+            "score_out_of_10": 5.817749999999999
+          },
+          {
+            "color": "#5c14a1",
+            "name": "Economy",
+            "score_out_of_10": 6.5145
+          },
+          {
+            "color": "#88149f",
+            "name": "Taxation",
+            "score_out_of_10": 4.204
+          },
+          {
+            "color": "#b9117d",
+            "name": "Internet Access",
+            "score_out_of_10": 6.4805
+          },
+          {
+            "color": "#d10d54",
+            "name": "Leisure & Culture",
+            "score_out_of_10": 7.765499999999999
+          },
+          {
+            "color": "#e70c26",
+            "name": "Tolerance",
+            "score_out_of_10": 4.062
+          },
+          {
+            "color": "#f1351b",
+            "name": "Outdoors",
+            "score_out_of_10": 5.0095
+          }
+        ]
+      }
+    })
 
   })
   it('renders the App', async () => {
