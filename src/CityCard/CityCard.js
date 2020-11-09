@@ -1,15 +1,21 @@
+import React, { useState } from 'react'
 import defaultScale from '../assets/scale-bw.png'
 import colorScale from '../assets/scale-color.png'
 
 const CityCard = ({name, addToCompareList}) => {
+  const [toggle, setToggle] = useState(false)
 
-  // const toggleCompare = compareList.includes(name) 
-  // ? defaultScale : colorScale
+  let compareButton = toggle ? colorScale : defaultScale
+
+  const toggleCompare = () => {
+    setToggle(!toggle)
+    addToCompareList(name)
+  }
   return (
     <>
       <img 
-        src={defaultScale}
-        onClick={() => addToCompareList(name)}
+        src={compareButton}
+        onClick={() => toggleCompare()}
       />
       <h3>{name}</h3>
     </>

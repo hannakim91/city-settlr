@@ -31,7 +31,12 @@ const App = () => {
 
   const addToCompareList = (cityName) => {
     console.log('click')
-    setCompareList([...compareList, cityName])
+    if (compareList.length < 3 && !compareList.includes(cityName)) {
+      console.log('added', cityName)
+      setCompareList([...compareList, cityName])
+    } else {
+      // ui letting user know about list
+    }
   }
 
   return (
