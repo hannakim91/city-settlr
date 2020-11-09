@@ -82,12 +82,15 @@ const App = () => {
         />
         <Route 
           path="/city/:name"
-          render={() => 
-            // console.log(match)
-            // console.log(cities)
-            // const cityToRender = cities.find(city => match.params.name)
-            <DetailsPage />
-          }
+          render={({ match }) => {
+            const cityToRender = cities.find(city => city === match.params.name)
+
+            // if (!cityToRender) {
+            //   return <p>This city does not exist!</p>
+            // }
+            return <DetailsPage city={cityToRender} />
+
+          }}
         />
       </Switch>
     </>

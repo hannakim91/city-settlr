@@ -1,8 +1,10 @@
 import React from 'react'
 
-const DetailsPage = () => {
+const DetailsPage = ({city}) => {
   return (
-    <>DETAILS</>
+    <>
+     <h2>{city}</h2>
+    </>
   )
 }
 export default DetailsPage
