@@ -6,10 +6,12 @@ describe('Cities', () => {
 
   it('renders a card UI section', () => {
     const cities = ["Atlanta", "Bali", "Caracas"]
+    const compareList = ["Atlanta"]
     render(
       <MemoryRouter>
         <Cities 
           cities={cities}
+          compareList={compareList}
         />
       </MemoryRouter>
     );
