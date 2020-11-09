@@ -281,4 +281,22 @@ describe('App', () => {
     expect(baliStats.egalitarianism).toBeInTheDocument()
   })
 
+  it('should show an error message if user tries to compare with only one city', async () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    )
+    await waitFor(() => expect(screen.getByText("Atlanta")).toBeInTheDocument())
+    const addAtlantaIcon = screen.getByAltText("add Atlanta to compare list")
+    const compareButton = screen.getByText("Compare!")
+ 
+    userEvent.click(addAtlantaIcon)
+    userEvent.click(compareButton)
+    await waitFor(() => expect(screen.getByText("Settlr")).toBeInTheDocument())
+ 
+    const error = "Please select 2 or more cities to compare"
+    expect(screen.getByText(error)).toBeInTheDocument()
+  })
+
 })
