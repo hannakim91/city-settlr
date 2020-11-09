@@ -10,6 +10,7 @@ const App = () => {
   const [cities, setCities] = useState({ cities: [] })
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
   const [compareList, setCompareList] = useState([])
 
   useEffect(() => {
@@ -29,13 +30,14 @@ const App = () => {
     fetchData()
   }, [])
 
-  const addToCompareList = (cityName) => {
+  const toggleCompareList = (cityName) => {
     console.log('click')
     if (compareList.length < 3 && !compareList.includes(cityName)) {
       console.log('added', cityName)
       setCompareList([...compareList, cityName])
     } else {
-      // ui letting user know about list
+      setIsError(true)
+      setErrorMessage('You can compare up to 3 cities at a time')
     }
   }
 
@@ -53,9 +55,10 @@ const App = () => {
           exact path='/'
           render={() => (
             <section className="App">
+              {isError && errorMessage}
               <Cities
                 cities={cities}
-                addToCompareList={addToCompareList}
+                toggleCompareList={toggleCompareList}
               />
             </section>
           )}

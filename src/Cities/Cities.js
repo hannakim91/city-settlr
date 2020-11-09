@@ -15,7 +15,8 @@ const Cities = (props) => {
     return <CityCard 
       name={city}
       key={i + 1}
-      addToCompareList={props.addToCompareList}
+      id={city}
+      toggleCompareList={props.toggleCompareList}
     />
   })
 
