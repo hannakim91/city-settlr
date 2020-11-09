@@ -247,13 +247,38 @@ describe('App', () => {
     userEvent.click(addBaliIcon)
     userEvent.click(compareButton)
     await waitFor(() => expect(screen.getByText("Compare Cities")).toBeInTheDocument())
-    screen.debug()
 
     const atlantaStats = {
-      name: "Atlanta",
-      travel: "Travel Connectivity: 1.7765000000000004"
+      name: screen.getByText("Atlanta"),
+      travel: screen.getByText("Travel Connectivity: 5.3"),
+      internet: screen.getByText("Internet Access: 6.5"),
+      economy: screen.getByText("Economy: 6.5"),
+      culture: screen.getByText("Leisure & Culture: 7.8"),
+      egalitarianism: screen.getByText("Egalitarianism: 7.8")
     }
 
+    const baliStats = {
+      name: screen.getByText("Bali"),
+      travel: screen.getByText("Travel Connectivity: 1.9"),
+      internet: screen.getByText("Internet Access: 3.2"),
+      economy: screen.getByText("Economy: 4.7"),
+      culture: screen.getByText("Leisure & Culture: 6.3"),
+      egalitarianism: screen.getByText("Egalitarianism: 6.3")
+    }
+
+    expect(atlantaStats.name).toBeInTheDocument()
+    expect(atlantaStats.travel).toBeInTheDocument()
+    expect(atlantaStats.internet).toBeInTheDocument()
+    expect(atlantaStats.economy).toBeInTheDocument()
+    expect(atlantaStats.culture).toBeInTheDocument()
+    expect(atlantaStats.egalitarianism).toBeInTheDocument()
+
+    expect(baliStats.name).toBeInTheDocument()
+    expect(baliStats.travel).toBeInTheDocument()
+    expect(baliStats.internet).toBeInTheDocument()
+    expect(baliStats.economy).toBeInTheDocument()
+    expect(baliStats.culture).toBeInTheDocument()
+    expect(baliStats.egalitarianism).toBeInTheDocument()
   })
 
 })
