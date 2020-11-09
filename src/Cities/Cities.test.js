@@ -15,7 +15,13 @@ describe('Cities', () => {
         />
       </MemoryRouter>
     );
-    expect(screen.getByText("Cities")).toBeInTheDocument();
+
+    const button = screen.getByText('Compare!');
+    const sectionHeader = screen.getByText("Cities");
+
+    expect(sectionHeader).toBeInTheDocument();
+    expect(button).toBeInTheDocument();
+
     expect(screen.getByText("Atlanta")).toBeInTheDocument();
     expect(screen.getByText("Bali")).toBeInTheDocument();
     expect(screen.getByText("Caracas")).toBeInTheDocument();
