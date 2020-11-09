@@ -32,7 +32,20 @@ describe('App', () => {
     await waitFor(() => expect(screen.getByText("Atlanta")).toBeInTheDocument())
     expect(screen.getByText("Bali")).toBeInTheDocument()
     expect(screen.getByText("Caracas")).toBeInTheDocument()
-    screen.debug()
   });
+
+  it('can add cities to a list of cities to compare', async () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    )
+    await waitFor(() => expect(screen.getByText("Atlanta")).toBeInTheDocument())
+    const addToCompareListIcon = screen.getByAltText("add Atlanta to compare list")
+    expect(addToCompareListIcon.src).toEqual('http://localhost/scale-bw.png')
+    userEvent.click(addToCompareListIcon)
+    screen.debug()
+    expect(addToCompareListIcon.src).toEqual('http://localhost/scale-color.png')
+  })
 
 })

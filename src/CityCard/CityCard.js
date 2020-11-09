@@ -11,7 +11,7 @@ const CityCard = ({id, name, toggleCompareList, selected}) => {
       <img 
         id={`city-${id}`}
         src={addToCompareIcon}
-        alt="add to compare list"
+        alt={`add ${name} to compare list`}
         onClick={() => toggleCompareList(name)}
       />
       <h3>{name}</h3>
