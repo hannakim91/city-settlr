@@ -1,4 +1,5 @@
 import React from 'react'
+import { getSingleCity } from '../apiCalls.js'
 
 const DetailsPage = ({city}) => {
   return (
