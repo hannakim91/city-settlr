@@ -71,12 +71,15 @@ const App = () => {
           )}
         />
         <Route 
-            exact path='/compare' 
-            render={() => (
-              <ComparePage
-                compareList={compareList}
-              />
-            )}
+          exact path='/compare' 
+          render={() => (
+            <ComparePage
+              compareList={compareList}
+            />
+          )}
+        />
+        <Route 
+          path="/city/:name"
         />
       </Switch>
     </>
