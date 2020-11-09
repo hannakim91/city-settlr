@@ -4,13 +4,14 @@ import colorScale from '../assets/scale-color.png'
 
 const CityCard = ({id, name, toggleCompareList, selected}) => {
 
-  let compareButton = selected ? colorScale : defaultScale
+  let addToCompareIcon = selected ? colorScale : defaultScale
 
   return (
     <section id={`city-${id}`}>
       <img 
         id={`city-${id}`}
-        src={compareButton}
+        src={addToCompareIcon}
+        alt={`add ${name} to compare list`}
         onClick={() => toggleCompareList(name)}
       />
       <h3>{name}</h3>

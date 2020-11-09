@@ -28,11 +28,11 @@ const ComparePage = ({compareList}) => {
       {comparisonData.length && comparisonData.map((city, i) => (
         <section>
           <h3>{compareList[i]}</h3>
-          <p>{city.categories[4].name}: {city.categories[4].score_out_of_10}</p>
-          <p>{city.categories[13].name}: {city.categories[13].score_out_of_10}</p>
-          <p>{city.categories[11].name}: {city.categories[11].score_out_of_10}</p>
-          <p>{city.categories[14].name}: {city.categories[14].score_out_of_10}</p>
-          <p>Egalitarianism: {city.categories[14].score_out_of_10}</p>
+          <p>{city.categories[4].name}: {Math.round(city.categories[4].score_out_of_10 * 10) / 10}</p>
+          <p>{city.categories[13].name}: {Math.round(city.categories[13].score_out_of_10 * 10) / 10}</p>
+          <p>{city.categories[11].name}: {Math.round(city.categories[11].score_out_of_10 * 10) / 10}</p>
+          <p>{city.categories[14].name}: {Math.round(city.categories[14].score_out_of_10 * 10) / 10}</p>
+          <p>Egalitarianism: {Math.round(city.categories[14].score_out_of_10 * 10) / 10}</p>
         </section>
       ))}
     </>
