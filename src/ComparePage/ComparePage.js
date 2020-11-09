@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { getComparisonData } from '../apiCalls.js'
 
 const ComparePage = ({compareList}) => {
-  const [comparisonData, setComparisonData] = useState({citiesToCompare: [compareList]})
+  const [comparisonData, setComparisonData] = useState({citiesToCompare: []})
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +21,16 @@ const ComparePage = ({compareList}) => {
   return (
     <>
       <h2>Compare Cities</h2>
-
+      {comparisonData.length && comparisonData.map((city, i) => (
+        <>
+          <h3>{compareList[i]}</h3>
+          <p>{city.categories[4].name}: {city.categories[4].score_out_of_10}</p>
+          <p>{city.categories[13].name}: {city.categories[13].score_out_of_10}</p>
+          <p>{city.categories[11].name}: {city.categories[11].score_out_of_10}</p>
+          <p>{city.categories[14].name}: {city.categories[14].score_out_of_10}</p>
+          <p>Egalitarianism: {city.categories[14].score_out_of_10}</p>
+        </>
+      ))}
     </>
   )
 }
