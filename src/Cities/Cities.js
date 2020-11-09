@@ -11,12 +11,18 @@ const Cities = (props) => {
     }
   }, [props.cities])
 
+  // can do the toggle for scale picked here instead
+  //show it's been selected (on load, not just onclick)
+  //pass down another prop :selected: - have you been selected or not (are you in the comparelist)
+  //setToggle useState in cityCard -> determine the useState
   const cityCards = cities.map((city, i) => {
     return <CityCard 
       name={city}
       key={i + 1}
       id={city}
       toggleCompareList={props.toggleCompareList}
+      compareList={props.compareList}
+      selected={props.compareList.includes(city)}
     />
   })
 
