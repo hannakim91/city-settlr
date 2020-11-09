@@ -33,7 +33,6 @@ describe('App', () => {
     expect(screen.getByText("Bali")).toBeInTheDocument()
     expect(screen.getByText("Caracas")).toBeInTheDocument()
     screen.debug()
-
   });
 
 })

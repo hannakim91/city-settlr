@@ -10,7 +10,11 @@ describe('CityCard', () => {
       />
     );
     const name = screen.getByText("New York City");
+    const addToCompareIcon = screen.getByAltText("add to compare list")
+    
     expect(name).toBeInTheDocument();
+    screen.debug()
+    expect(addToCompareIcon).toBeInTheDocument()
   });
 
 })
