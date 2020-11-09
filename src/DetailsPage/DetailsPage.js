@@ -16,11 +16,15 @@ const DetailsPage = ({city}) => {
     fetchDetails()
   }, [city])
 
-  // const categoryList = details.categories.map(category => <li>category.name</li>)
+  if (Object.keys(details).length === 0) {
+    return <p>Loading...</p>
+  }
+
   return (
     <>
      <h2>{city}</h2>
      {details.summary && details.summary.replace( /(<([^>]+)>)/ig, '')}
+     <h3>Quality of Life</h3>
      <ul>
        {details.categories && details.categories.map(category => <li>{category.name}: {Math.round(category.score_out_of_10 * 10) / 10}</li>)}
      </ul>
