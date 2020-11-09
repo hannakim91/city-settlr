@@ -80,6 +80,9 @@ const App = () => {
         />
         <Route 
           path="/city/:name"
+          // render={({match})} => {
+          //   const cityToRender = cities.find(city => )
+          // }
         />
       </Switch>
     </>

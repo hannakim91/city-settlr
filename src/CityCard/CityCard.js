@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import defaultScale from '../assets/scale-bw.png'
 import colorScale from '../assets/scale-color.png'
 
@@ -14,7 +15,9 @@ const CityCard = ({id, name, toggleCompareList, selected}) => {
         alt={`add ${name} to compare list`}
         onClick={() => toggleCompareList(name)}
       />
-      <h3>{name}</h3>
+      <Link
+        to={`city/${name}`}
+      >{name}</Link>
     </section>
   )
 }
