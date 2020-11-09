@@ -8,7 +8,7 @@ export const getComparisonData = async (cities) => {
 }
 
 export const getSingleCity = async (city) => {
-  const promise = await fetch(`https://api.teleport.org/api/urban_areas/slug:${city}/scores/`)
+  const promise = await fetch(`https://api.teleport.org/api/urban_areas/slug:${city.toLowerCase().replace(/, | /g,"-")}/scores/`)
   return await promise.json()
   //make it promise.all for scores and image link
 }
