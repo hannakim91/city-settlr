@@ -32,15 +32,18 @@ const App = () => {
 
   const toggleCompareList = (cityName) => {
     console.log('click')
-      if (compareList.length >= 3) {
-        setIsError(true)
-        setErrorMessage('You can compare up to 3 cities at a time')
-      } else if (compareList.length <= 3 && compareList.includes(cityName)) {
-        const i = compareList.indexOf(cityName)
-        compareList.splice(i, 1)
-      } else if (compareList.length < 3 && !compareList.includes(cityName)) {
-        setCompareList([...compareList, cityName])
-      }
+    if (compareList.length < 3 && !compareList.includes(cityName)) {
+      setCompareList([...compareList, cityName])
+      console.log('add one', compareList)
+    } else if (compareList.length <= 3 && compareList.includes(cityName)) {
+      const i = compareList.indexOf(cityName)
+      compareList.splice(i, 1)
+      setCompareList([...compareList])
+      console.log('remove one', compareList)
+    } else if (compareList.length >= 3) {
+      setIsError(true)
+      setErrorMessage('You can compare up to 3 cities at a time')
+    }
   }
 
   return (
@@ -82,10 +85,12 @@ const App = () => {
 export default App;
 
 
-// if (compareList.length < 3 && !compareList.includes(cityName)) {
-//   console.log('added', cityName)
-//   setCompareList([...compareList, cityName])
-// } else {
-//   setIsError(true)
-//   setErrorMessage('You can compare up to 3 cities at a time')
-// }
+      // if (compareList.length >= 3) {
+      //   setIsError(true)
+      //   setErrorMessage('You can compare up to 3 cities at a time')
+      // } else if (compareList.length <= 3 && compareList.includes(cityName)) {
+      //   const i = compareList.indexOf(cityName)
+      //   compareList.splice(i, 1)
+      // } else if (compareList.length < 3 && !compareList.includes(cityName)) {
+      //   setCompareList([...compareList, cityName])
+      // }

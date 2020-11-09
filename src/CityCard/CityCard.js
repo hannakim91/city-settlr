@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import defaultScale from '../assets/scale-bw.png'
 import colorScale from '../assets/scale-color.png'
 
-const CityCard = ({id, name, toggleCompareList, compareList, selected}) => {
+const CityCard = ({id, name, toggleCompareList, selected}) => {
   // console.log(selected)
   // const [toggle, setToggle] = useState(selected)
   
@@ -18,7 +18,7 @@ const CityCard = ({id, name, toggleCompareList, compareList, selected}) => {
       <img 
         id={`city-${id}`}
         src={compareButton}
-        onClick={() => toggleCompare()}
+        onClick={() => toggleCompareList(name)}
       />
       <h3>{name}</h3>
     </section>

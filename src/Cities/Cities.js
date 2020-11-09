@@ -21,8 +21,7 @@ const Cities = (props) => {
       key={i + 1}
       id={city}
       toggleCompareList={props.toggleCompareList}
-      compareList={props.compareList}
-      selected={props.compareList.includes(city)}
+      selected={props.compareList.includes(city) ? true : false}
     />
   })
 
