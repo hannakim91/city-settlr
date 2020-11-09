@@ -14,7 +14,8 @@ describe('App', () => {
         ['ua:item']: [
           {name:"Atlanta"}, 
           {name: "Bali"},
-          {name: "Caracas"}
+          {name: "Caracas"},
+          {name: "Denver"}
         ]
       }
     })
@@ -281,7 +282,7 @@ describe('App', () => {
     expect(baliStats.egalitarianism).toBeInTheDocument()
   })
 
-  it('should show an error message if user tries to compare with only one city', async () => {
+  it('should show an error message if user tries to compare more than 3 cities', async () => {
     render(
       <MemoryRouter>
         <App />
@@ -298,5 +299,28 @@ describe('App', () => {
     const error = "Please select 2 or more cities to compare"
     expect(screen.getByText(error)).toBeInTheDocument()
   })
+
+  it('should show an error message if user tries to compare with only one city', async () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    )
+    await waitFor(() => expect(screen.getByText("Atlanta")).toBeInTheDocument())
+    const addAtlantaIcon = screen.getByAltText("add Atlanta to compare list")
+    const addBaliIcon = screen.getByAltText("add Bali to compare list")
+    const addCaracasIcon = screen.getByAltText("add Caracas to compare list")
+    const addDenverIcon = screen.getByAltText("add Denver to compare list")
+ 
+    userEvent.click(addAtlantaIcon)
+    userEvent.click(addBaliIcon)
+    userEvent.click(addCaracasIcon)
+    userEvent.click(addDenverIcon)
+ 
+    const error = "You can compare up to 3 cities at a time"
+    expect(screen.getByText(error)).toBeInTheDocument()
+  })
+
+
 
 })
