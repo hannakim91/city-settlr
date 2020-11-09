@@ -34,12 +34,14 @@ const App = () => {
     console.log('click')
     if (compareList.length < 3 && !compareList.includes(cityName)) {
       setCompareList([...compareList, cityName])
-      console.log('add one', compareList)
+      setIsError(false)
+      setErrorMessage('')
     } else if (compareList.length <= 3 && compareList.includes(cityName)) {
       const i = compareList.indexOf(cityName)
       compareList.splice(i, 1)
       setCompareList([...compareList])
-      console.log('remove one', compareList)
+      setIsError(false)
+      setErrorMessage('')
     } else if (compareList.length >= 3) {
       setIsError(true)
       setErrorMessage('You can compare up to 3 cities at a time')
