@@ -18,18 +18,22 @@ const ComparePage = ({compareList}) => {
     fetchData()
   }, [compareList])
 
+  if (compareList.length < 2) {
+    return <h3>Please select 2 or more cities to compare</h3>
+  }
+
   return (
     <>
       <h2>Compare Cities</h2>
       {comparisonData.length && comparisonData.map((city, i) => (
-        <>
+        <section>
           <h3>{compareList[i]}</h3>
           <p>{city.categories[4].name}: {city.categories[4].score_out_of_10}</p>
           <p>{city.categories[13].name}: {city.categories[13].score_out_of_10}</p>
           <p>{city.categories[11].name}: {city.categories[11].score_out_of_10}</p>
           <p>{city.categories[14].name}: {city.categories[14].score_out_of_10}</p>
           <p>Egalitarianism: {city.categories[14].score_out_of_10}</p>
-        </>
+        </section>
       ))}
     </>
   )
