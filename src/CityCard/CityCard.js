@@ -16,6 +16,7 @@ const CityCard = ({id, name, toggleCompareList, selected}) => {
         onClick={() => toggleCompareList(name)}
       />
       <Link
+        data-testid={`${name}-link`}
         to={`city/${name}`}
       >
         {name}

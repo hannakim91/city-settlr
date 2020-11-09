@@ -10,14 +10,5 @@ export const getComparisonData = async (cities) => {
 export const getSingleCity = async (city) => {
   const promise = await fetch(`https://api.teleport.org/api/urban_areas/slug:${city.toLowerCase().replace(/, | /g,"-")}/scores/`)
   return await promise.json()
-  //make it promise.all for scores and image link
 }
-
-//api setup:
-//list of all cities: _links.curies[i].name (all city names available)
-//https://api.teleport.org/api/urban_areas/
-//individual city score: _links.categories[i].name || score_out_of_10
-//`https://api.teleport.org/api/urban_areas/slug:${cityName}/scores/`
-// individual city images: _links.photos[0].attribution.source
-//`https://api.teleport.org/api/urban_areas/slug:${cityName}/images/`
 
