@@ -9,7 +9,6 @@ const ComparePage = ({compareList}) => {
     const fetchData = async () => {
       try {
         const citiesToCompare = await getComparisonData(compareList)
-        console.log(citiesToCompare)
         setComparisonData(citiesToCompare)
       }
       catch (error) {

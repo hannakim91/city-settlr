@@ -8,7 +8,6 @@ const DetailsPage = ({city}) => {
     const fetchDetails = async () => {
       try {
         const cityInfo = await getSingleCity(city)
-        console.log(details)
         setDetails(cityInfo)
       }
       catch (error) {

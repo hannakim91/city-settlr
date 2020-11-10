@@ -32,7 +32,6 @@ const App = () => {
   }, [])
 
   const toggleCompareList = (cityName) => {
-    console.log('click')
     if (compareList.length < 3 && !compareList.includes(cityName)) {
       setCompareList([...compareList, cityName])
       setIsError(false)

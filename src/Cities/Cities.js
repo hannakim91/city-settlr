@@ -31,7 +31,9 @@ const Cities = (props) => {
     <>
       <h2>Cities</h2>
       <Link to="/compare">
-        <button type="button">
+        <button 
+          className="compare-button"
+          type="button">
           Compare!
         </button>
       </Link>
