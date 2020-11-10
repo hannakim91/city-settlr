@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getComparisonData } from '../apiCalls.js'
+import PropTypes from 'prop-types'
 
 const ComparePage = ({compareList}) => {
   const [comparisonData, setComparisonData] = useState({citiesToCompare: []})
@@ -37,5 +38,9 @@ const ComparePage = ({compareList}) => {
       ))}
     </>
   )
+}
+
+ComparePage.propTypes = {
+  compareList: PropTypes.arrayOf(PropTypes.string)
 }
 export default ComparePage
