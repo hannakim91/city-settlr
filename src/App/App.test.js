@@ -411,7 +411,7 @@ describe('App', () => {
     expect(screen.getByText(error)).toBeInTheDocument()
   })
 
-  it.only('should route a user to a city details page', async () => {
+  it('should route a user to a city details page', async () => {
     render(
       <MemoryRouter>
         <App />
@@ -430,7 +430,7 @@ describe('App', () => {
       economy: screen.getByText("Economy: 6.5"),
       culture: screen.getByText("Leisure & Culture: 7.8")
     }
-    
+
     expect(summary).toBeInTheDocument()
     expect(atlantaStats.name).toBeInTheDocument()
     expect(atlantaStats.housing).toBeInTheDocument()
@@ -439,10 +439,6 @@ describe('App', () => {
     expect(atlantaStats.economy).toBeInTheDocument()
     expect(atlantaStats.culture).toBeInTheDocument()
   
-
-
-
-    screen.debug()
   })
 
 
