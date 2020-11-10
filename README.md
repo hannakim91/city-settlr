@@ -21,3 +21,21 @@ To view the test suite:
 ```
 npm test
 ```
+
+## App in Action
+
+## Skills
+
+## Technologies Used
+
+## Wins & Challenges
+
+## Additional Links
+- [Project Board](https://github.com/hannakim91/city-settlr/projects/1)
+- [Wireframe](https://www.figma.com/file/a9ncSEEXTjgllnlgJFrYe5/Wireframe?node-id=0%3A1)
+
+
+## Credits
+- Icons created by [Freepik](http://www.freepik.com/) and [Surang](https://www.flaticon.com/free-icon/balance_2942830)
+- [Teleport API](https://developers.teleport.org/api/getting_started/#search_name)
+- [Spec](https://frontend.turing.io/projects/module-3/binary-challenge.html)
