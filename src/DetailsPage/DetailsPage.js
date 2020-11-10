@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getSingleCity } from '../apiCalls.js'
+import PropTypes from 'prop-types'
 
 const DetailsPage = ({city}) => {
   const [details, setDetails] = useState({})
@@ -32,4 +33,9 @@ const DetailsPage = ({city}) => {
     </>
   )
 }
+
+DetailsPage.prpoTypes = {
+  city: PropTypes.string
+}
+
 export default DetailsPage
