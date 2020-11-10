@@ -13,18 +13,25 @@
 
 @keyframes spin {
   0% {
-      -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
-  25% { /* note that rotation from 0 to 20 deg happens in 25% time = 0.45 seconds. */
-      -webkit-transform: rotate(20deg);
+  25% {
+    transform: rotate(20deg);
   }
   50% {
-      -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   75% {
-      -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
   }
   100% {
-      -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }    
+}
+
+.details-link {
+  color: red;
+}
+.details-link:visited {
+  text-decoration: none
 }

@@ -17,9 +17,11 @@ const CityCard = ({id, name, toggleCompareList, selected}) => {
         id={`city-${id}`}
         src={addToCompareIcon}
         alt={`add ${name} to compare list`}
+        tabindex="0"
         onClick={() => toggleCompareList(name)}
       />
       <Link
+        className="details-link"
         data-testid={`${name}-link`}
         to={`city/${name}`}
       >
