@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CityCard from '../CityCard/CityCard'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const Cities = (props) => {
   const [cities, setCities] = useState([])
@@ -11,10 +12,6 @@ const Cities = (props) => {
     }
   }, [props.cities])
 
-  // can do the toggle for scale picked here instead
-  //show it's been selected (on load, not just onclick)
-  //pass down another prop :selected: - have you been selected or not (are you in the comparelist)
-  //setToggle useState in cityCard -> determine the useState
   const cityCards = cities.map((city, i) => {
     return <CityCard 
       name={city}
@@ -24,6 +21,10 @@ const Cities = (props) => {
       selected={props.compareList.includes(city) ? true : false}
     />
   })
+
+  if (cities.length === 0 ) {
+    return <p>Loading...</p>
+  }
 
   return (
     <>
@@ -38,4 +39,8 @@ const Cities = (props) => {
   )
 }
 
+Cities.propTypes = {
+  compareList: PropTypes.arrayOf(PropTypes.string),
+  // cities: PropTypes.array.isRequired
+}
 export default Cities
