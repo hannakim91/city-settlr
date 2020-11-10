@@ -13,6 +13,7 @@ const CityCard = ({id, name, toggleCompareList, selected}) => {
       className="CityCard"
       id={`city-${id}`}>
       <img 
+        className="scale-icon"
         id={`city-${id}`}
         src={addToCompareIcon}
         alt={`add ${name} to compare list`}
