@@ -17,7 +17,8 @@ const CityCard = ({id, name, toggleCompareList, selected}) => {
         id={`city-${id}`}
         src={addToCompareIcon}
         alt={`add ${name} to compare list`}
-        tabindex="0"
+        tabIndex="0"
+        onKeyDown={() => toggleCompareList(name)}
         onClick={() => toggleCompareList(name)}
       />
       <Link
