@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import defaultScale from '../assets/scale-bw.png'
 import colorScale from '../assets/scale-color.png'
-
+import './CityCard.css'
 const CityCard = ({id, name, toggleCompareList, selected}) => {
 
   let addToCompareIcon = selected ? colorScale : defaultScale
 
   return (
-    <section id={`city-${id}`}>
+    <section 
+      className="CityCard"
+      id={`city-${id}`}>
       <img 
         id={`city-${id}`}
         src={addToCompareIcon}
