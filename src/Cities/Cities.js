@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import CityCard from '../CityCard/CityCard'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import './Cities.css'
 
 const Cities = (props) => {
   const [cities, setCities] = useState([])
@@ -34,7 +35,7 @@ const Cities = (props) => {
           Compare!
         </button>
       </Link>
-      <section>{cityCards}</section>
+      <section className="Cities-container">{cityCards}</section>
     </>
   )
 }
