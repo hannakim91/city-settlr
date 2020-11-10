@@ -7,6 +7,10 @@
   align-items: center
 }
 
+.scale-icon {
+  padding-bottom: 1.5vh;
+}
+
 .scale-icon:hover {
   -webkit-animation:spin 3.6s linear infinite;
 }
