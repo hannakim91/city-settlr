@@ -25,6 +25,10 @@ npm test
 ## App in Action
 
 ## Skills
+- Functional JavaScript Programming
+- Test Driven Development
+- Git workflow using project board, issues focused on user stories & linked to specific branches, automated PR template, creating a separate `develop` branch on GitHub to push/pull local changes 
+- Wireframing using Figma
 
 ## Technologies Used
 
