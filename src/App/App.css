@@ -5,6 +5,7 @@
 .App-logo {
   height: 10vmin;
   pointer-events: none;
+  padding: 1vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -19,6 +20,7 @@
   padding: 4vh;
   display: flex;
   flex-direction: row;
+  align-items:center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
