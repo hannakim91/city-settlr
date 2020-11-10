@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CityCard from '../CityCard/CityCard'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const Cities = (props) => {
   const [cities, setCities] = useState([])
@@ -38,4 +39,7 @@ const Cities = (props) => {
   )
 }
 
+Cities.propTypes = {
+  cities: PropTypes.arrayOf(PropTypes.string)
+}
 export default Cities
