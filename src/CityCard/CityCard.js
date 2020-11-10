@@ -3,20 +3,26 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import defaultScale from '../assets/scale-bw.png'
 import colorScale from '../assets/scale-color.png'
-
+import './CityCard.css'
 const CityCard = ({id, name, toggleCompareList, selected}) => {
 
   let addToCompareIcon = selected ? colorScale : defaultScale
 
   return (
-    <section id={`city-${id}`}>
+    <section 
+      className="CityCard"
+      id={`city-${id}`}>
       <img 
+        className="scale-icon"
         id={`city-${id}`}
         src={addToCompareIcon}
         alt={`add ${name} to compare list`}
+        tabIndex="0"
+        onKeyDown={() => toggleCompareList(name)}
         onClick={() => toggleCompareList(name)}
       />
       <Link
+        className="details-link"
         data-testid={`${name}-link`}
         to={`city/${name}`}
       >

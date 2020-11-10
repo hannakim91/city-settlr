@@ -18,9 +18,9 @@ const App = () => {
     const fetchData = async () => {
       setIsLoading(true)
       try {
-        const result = await getAllCities()
-        const cityNames = result._links['ua:item'].map(city => city.name)
-        // const cityNames = ["Aarhus", "Adelaide", "Albuquerque", "Almaty", "Amsterdam", "Anchorage", "Andorra", "Ankara", "Asheville", "Asuncion", "Athens", "Atlanta", "Auckland", "Austin", "Baku", "Bali", "Baltimore", "Bangkok", "Barcelona", "Beijing", "Beirut", "Belfast", "Belgrade", "Belize City", "Bengaluru", "Bergen", "Berlin", "Bern", "Bilbao", "Birmingham", "Birmingham, AL"]
+        // const result = await getAllCities()
+        // const cityNames = result._links['ua:item'].map(city => city.name)
+        const cityNames = ["Aarhus", "Adelaide", "Albuquerque", "Almaty", "Amsterdam", "Anchorage", "Andorra", "Ankara", "Asheville", "Asuncion", "Athens", "Atlanta", "Auckland", "Austin", "Baku", "Bali", "Baltimore", "Bangkok", "Barcelona", "Beijing", "Beirut", "Belfast", "Belgrade", "Belize City", "Bengaluru", "Bergen", "Berlin", "Bern", "Bilbao", "Birmingham", "Birmingham, AL"]
         setCities(cityNames)
       }
       catch (error) {
@@ -32,7 +32,6 @@ const App = () => {
   }, [])
 
   const toggleCompareList = (cityName) => {
-    console.log('click')
     if (compareList.length < 3 && !compareList.includes(cityName)) {
       setCompareList([...compareList, cityName])
       setIsError(false)

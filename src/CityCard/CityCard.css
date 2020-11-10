@@ -1,0 +1,41 @@
+.CityCard {
+  border: 1px solid;
+  padding: 2.5vh;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.scale-icon {
+  padding-bottom: 1.5vh;
+}
+
+.scale-icon:hover {
+  -webkit-animation:spin 3.6s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }    
+}
+
+.details-link {
+  color: #03254E;
+}
+.details-link:visited {
+  text-decoration: none
+}

@@ -23,6 +23,10 @@ npm test
 ```
 
 ## App in Action
+### Compare Cities Feature
+![Compare Cities Giphy](https://media.giphy.com/media/BLBiIdDir52iVpJ8x5/giphy.gif)
+### Individual City Page
+![Individual City View Giphy](https://media.giphy.com/media/a4tdWVIyqIa86lLFaK/giphy.gif)
 
 ## Skills
 - Functional JavaScript Programming

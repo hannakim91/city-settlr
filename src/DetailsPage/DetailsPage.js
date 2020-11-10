@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getSingleCity } from '../apiCalls.js'
 import PropTypes from 'prop-types'
+import './DetailsPage.css'
 
 const DetailsPage = ({city}) => {
   const [details, setDetails] = useState({})
@@ -8,7 +9,6 @@ const DetailsPage = ({city}) => {
     const fetchDetails = async () => {
       try {
         const cityInfo = await getSingleCity(city)
-        console.log(details)
         setDetails(cityInfo)
       }
       catch (error) {
@@ -23,14 +23,18 @@ const DetailsPage = ({city}) => {
   }
 
   return (
-    <>
-     <h2>{city}</h2>
-     {details.summary && details.summary.replace( /(<([^>]+)>)/ig, '')}
-     <h3>Quality of Life</h3>
-     <ul>
-       {details.categories && details.categories.map(category => <li>{category.name}: {Math.round(category.score_out_of_10 * 10) / 10}</li>)}
-     </ul>
-    </>
+    <article className="DetailsPage">
+      <section>
+        <h2>{city}</h2>
+        {details.summary && details.summary.replace( /(<([^>]+)>)/ig, '')}
+      </section>
+      <section>
+        <h3>Quality of Life</h3>
+        <ul>
+          {details.categories && details.categories.map(category => <li>{category.name}: {Math.round(category.score_out_of_10 * 10) / 10}</li>)}
+        </ul>
+      </section>
+    </article>
   )
 }
 
