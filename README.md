@@ -31,6 +31,14 @@ npm test
 - Wireframing using Figma
 
 ## Technologies Used
+- React
+- Hooks
+- React Router
+- Jest & React testing libraries
+- NPM
+- Git/GitHub
+- Async JS to Fetch RESTful API
+- PropTypes
 
 ## Wins & Challenges
 
