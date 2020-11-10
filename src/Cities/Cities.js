@@ -40,6 +40,7 @@ const Cities = (props) => {
 }
 
 Cities.propTypes = {
-  cities: PropTypes.arrayOf(PropTypes.string)
+  compareList: PropTypes.arrayOf(PropTypes.string),
+  // cities: PropTypes.array.isRequired
 }
 export default Cities
