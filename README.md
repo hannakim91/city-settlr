@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Settlr - Mod 3 Final Solo Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Created By
+- [Hanna Kim](https://github.com/hannakim91)
 
-## Available Scripts
+## Abstract
+Settlr is a multi-page React app built for remote/tech workers looking to find the next best city to move to. A user starts at a homepage that renders city cards they can interact with the cards in 2 ways:
+- Click city name links to route to each city's details page
+- Choose 2 or 3 cities to "compare" the most relevant quality of life factors to a remote worker.
 
-In the project directory, you can run:
+## Setup & Installation
+To view and use the application, clone down [this repository](git@github.com:hannakim91/city-settlr.git) and install npm. Run npm and open [localhost:3000](localhost:3000) on your browser of choice
 
-### `yarn start`
+Note: Currently the main codebase lives on the **develop** branch on GitHub
+```
+git clone git@github.com:hannakim91/city-settlr.git
+npm install
+npm start
+```
+To view the test suite:
+```
+npm test
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## App in Action
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Skills
+- Functional JavaScript Programming
+- Test Driven Development
+- Git workflow using project board, issues focused on user stories & linked to specific branches, automated PR template, creating a separate `develop` branch on GitHub to push/pull local changes 
+- Wireframing using Figma
 
-### `yarn test`
+## Technologies Used
+- React
+- Hooks
+- React Router
+- Jest & React testing libraries
+- NPM
+- Git/GitHub
+- Async JS to Fetch RESTful API
+- PropTypes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Wins & Challenges
+### Transitioning from Class Components to Functional Components
+Going from class-based components to functional components using hooks was a tricky transition, especially for the city comparison feature. 
+Building this feature relied on logic to both add a set number of cities to a list of cities to compare and also in order to to toggle icons from B&W (default) to colored (on click). I now have a better understanding of how to more effectively use the `useState` hook.
+### Working with pre-defined API Data
+Managing how the API data I chose was organized in 3 separate endpoints and developing component architecture based on this. 
+The list of all the cities' names was on one endpoint while each individual city's details and images were on two separate endpoints. I was able to use `Promise.all` to fetch data for multiple cities I wanted to compare and tried to write a similar request for the details and images, but the image URL's were to websites that had open-source images and not to actual image files, so I reverted back to just the city details for the time being.
+### Enhancing Git Workflow
+- Focusing on using terminal commands to create/re-name/delete files and directories in the repo.
+- Organizing project issues/branches to reflect AGILE workflow used in most professional environments
 
-### `yarn build`
+## Looking Forward
+- See the project linked below for future feature ideas!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Additional Links
+- [Project Board](https://github.com/hannakim91/city-settlr/projects/1)
+- [Wireframe](https://www.figma.com/file/a9ncSEEXTjgllnlgJFrYe5/Wireframe?node-id=0%3A1)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Credits
+- Icons created by [Freepik](http://www.freepik.com/) and [Surang](https://www.flaticon.com/free-icon/balance_2942830)
+- [Teleport API](https://developers.teleport.org/api/getting_started/#search_name)
+- [Spec](https://frontend.turing.io/projects/module-3/binary-challenge.html)
