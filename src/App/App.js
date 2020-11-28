@@ -7,8 +7,6 @@ import DetailsPage from '../DetailsPage/DetailsPage.js';
 import logo from '../assets/location.png';
 import './App.css';
 
-// test 
-
 const App = () => {
   const [cities, setCities] = useState({ cities: [] })
   const [isLoading, setIsLoading] = useState(false)
