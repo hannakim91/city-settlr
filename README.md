@@ -67,8 +67,3 @@ The list of all the cities' names was on one endpoint while each individual city
 - Icons created by [Freepik](http://www.freepik.com/) and [Surang](https://www.flaticon.com/free-icon/balance_2942830)
 - [Teleport API](https://developers.teleport.org/api/getting_started/#search_name)
 - [Spec](https://frontend.turing.io/projects/module-3/binary-challenge.html)
-
-//SEARCH OPTIONS
-//PHOTOS
-//COLOR CHANGE after link click
-// link to wikipedia?
